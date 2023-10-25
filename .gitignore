@@ -39,4 +39,5 @@ java/build/**
 # Project Specific Files
 .idea/
 *.iml
+out/
 
