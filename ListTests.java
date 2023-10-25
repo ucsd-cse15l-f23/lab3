@@ -13,15 +13,27 @@ public class ListTests {
         StringChecker sc = s -> { return Objects.equals(s, "hello") || Objects.equals(s, "hi"); };
 
         ArrayList<String> testList = new ArrayList<>();
-        testList.add("what");
         testList.add("hello");
-        testList.add("oh");
+        testList.add("hallo");
         testList.add("hi");
-        testList.add("how");
-        testList.add("are");
-        testList.add("you");
 
         List<String> filteredList = ListExamples.filter(testList, sc);
         assertArrayEquals(new String[]{"hello",  "hi"}, filteredList.toArray());
+    }
+
+    @Test
+    public void mergeTest() {
+        ArrayList<String> list1 = new ArrayList<>();
+        ArrayList<String> list2 = new ArrayList<>();
+        list1.add("a");
+        list2.add("b");
+        list1.add("c");
+        list2.add("d");
+        list1.add("e");
+        list2.add("f");
+        list2.add("g");
+
+        List<String> mergedList = ListExamples.merge(list1, list2);
+        assertArrayEquals(new String[]{"a", "b", "c", "d", "e", "f", "g"}, mergedList.toArray());
     }
 }
