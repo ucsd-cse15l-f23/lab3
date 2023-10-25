@@ -45,6 +45,4 @@ class ListExamples {
         }
         return result;
     }
-
-
 }
